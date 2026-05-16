@@ -170,15 +170,6 @@ main {
   }
 }
 
-.guia {
-  width: 95%;
-  height: 600px;
-  border: none;
-  box-shadow: 0 0 5px rosybrown;
-  border-radius: 15px;
-  margin-top: 10px;
-}
-
 figure{
   display: flex;
   flex-direction: column;
@@ -269,4 +260,13 @@ video {
   transform: scale(0.98);
   transition: 0.3s;
 }
+}
+
+.guia {
+  width: 95%;
+  height: 600px;
+  border: none;
+  box-shadow: 0 0 5px rosybrown;
+  border-radius: 15px;
+  margin-top: 10px;
 }
