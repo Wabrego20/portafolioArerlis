@@ -85,13 +85,6 @@ main {
 }
 .cont-v {
   flex-direction: column;
-  .titulo {
-    font-size: 44px;
-    width: 95%;
-    text-align: center;
-    font-family: monospace;
-    margin: 5px 0;
-  }
   .tit-glos {
     width: 100%;
     background-color: rgba(255, 0, 170, 0.452);
@@ -287,7 +280,12 @@ video {
     box-shadow: 0 0 5px rgb(0, 0, 0);
   }
 }
-
-.titulo{
-  max-width: 95%;
-}
+.titulo {
+    font-size: 44px;
+    max-width: 95%;
+    text-align: center;
+    font-family: monospace;
+    margin: 5px 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
