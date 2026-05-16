@@ -142,6 +142,13 @@ main {
   align-items: center;
   flex-wrap: wrap;
   font-family: monospace;
+  .autoevalua {
+      max-width: 95%;
+      object-fit: contain;
+      border-radius: 7px;
+      margin: 10px auto;
+      box-shadow: 0 0 10px rgb(187, 12, 172);
+  }
 }
 
 figure{
