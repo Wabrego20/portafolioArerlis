@@ -137,37 +137,11 @@ main {
 
 .ppts {
   width: 100%;
-  min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   font-family: monospace;
-  .ppt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    height: 280px;
-    max-width: 95%;
-    overflow: auto;
-    margin: 10px;
-    iframe{
-      width: 100%;
-      height: 100%;
-      border: none;
-      box-shadow: 0 0 5px rosybrown;
-      border-radius: 15px;
-    }
-    img{
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border: none;
-      overflow: hidden;
-    }
-  }
 }
 
 figure{
@@ -263,10 +237,15 @@ video {
 }
 
 .guia {
-  width: 95%;
-  height: 600px;
-  border: none;
-  box-shadow: 0 0 5px rosybrown;
+  min-width: 95%;
+  height: 50vw;
   border-radius: 15px;
   margin-top: 10px;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+  }
+ 
 }
