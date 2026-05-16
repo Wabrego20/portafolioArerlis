@@ -287,3 +287,7 @@ video {
     box-shadow: 0 0 5px rgb(0, 0, 0);
   }
 }
+
+.titulo{
+  max-width: 95%;
+}
