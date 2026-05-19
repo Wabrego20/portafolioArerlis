@@ -106,7 +106,7 @@ footer {
   object-fit: cover;
   border-radius: 10px;
   box-shadow: var(--shadow-densa);
-  margin: 10px;
+  margin-bottom: 10px;
 }
 .txt-frase {
   font-size: 28px;
@@ -300,6 +300,6 @@ video {
     height: auto;
     object-fit: contain;
     border-radius: 15px;
-    box-shadow: 0 0 5px rgb(0, 0, 0);
+    box-shadow: var(--shadow-densa)
   }
 }
