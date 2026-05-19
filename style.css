@@ -3,6 +3,34 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  /* Colores principales */
+  --color-fondo: #f7f4fa;
+  --color-fondo-seccion: #ffffff;
+  --color-primario: #7e57a0; /* morado suave */
+  --color-secundario: #d8c6e6; /* lila claro */
+  --color-acento: #a7c7e7; /* azul calmado */
+
+  /* Texto */
+  --color-texto-principal: #2e2e2e;
+  --color-texto-secundario: #5f5f5f;
+  --color-texto-claro: #ffffff;
+
+  /* Neutros */
+  --color-negro-suave: #1f1f1f;
+  --color-gris: #e5e5e5;
+  --color-gris-oscuro: #555555;
+
+  /* Bordes y sombras */
+  --color-borde: #ddd6e8;
+  --box-shadow-suave: 0 4px 12px rgba(126, 87, 160, 0.18);
+  --box-shadow-media: 0 8px 20px rgba(31, 31, 31, 0.16);
+
+  /* Estados */
+  --color-hover: #6d4a8c;
+  --color-alerta-suave: #f6d6d6;
+  --color-exito-suave: #d9ead3;
+}
 body {
   display: flex;
   justify-content: center;
@@ -64,7 +92,7 @@ main {
   justify-content: center;
   align-items: center;
   margin: 10px;
-  h2{
+  h2 {
     margin: 5px;
   }
   img {
@@ -136,15 +164,15 @@ main {
   flex-wrap: wrap;
   font-family: monospace;
   .autoevalua {
-      max-width: 95%;
-      object-fit: contain;
-      border-radius: 7px;
-      margin: 10px auto;
-      box-shadow: 0 0 10px rgb(187, 12, 172);
+    max-width: 95%;
+    object-fit: contain;
+    border-radius: 7px;
+    margin: 10px auto;
+    box-shadow: 0 0 10px rgb(187, 12, 172);
   }
 }
 
-figure{
+figure {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,7 +181,7 @@ figure{
   height: 400px;
   width: 300px;
   position: relative;
-  h2{
+  h2 {
     position: absolute;
     top: 15px;
     left: 10px;
@@ -167,7 +195,7 @@ video {
   height: 95%;
 }
 
-.carrusel{
+.carrusel {
   position: relative;
   width: 425px;
   height: 225px;
@@ -176,7 +204,7 @@ video {
   overflow: hidden;
   border-radius: 7px;
   margin: 10px;
-  img{
+  img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -184,12 +212,11 @@ video {
     opacity: 0;
     object-position: center;
     object-fit: contain;
-    
   }
-  .activo{
+  .activo {
     opacity: 1;
   }
-  button{
+  button {
     text-align: center;
     line-height: 35px;
     height: 35px;
@@ -205,45 +232,44 @@ video {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.445);
   }
-  button:hover{
+  button:hover {
     background-color: gray;
     color: white;
     transition: 0.3s;
   }
-  .adelante{
+  .adelante {
     right: 5px;
   }
-  .atras{
+  .atras {
     left: 5px;
   }
-  a{
+  a {
     position: absolute;
     bottom: 2px;
     right: 2px;
     height: 35px;
-      width: 35px;
-      border-radius: 50%;
-      background-color: white;
-      box-shadow: inset 0 0 5px blue;
-      display: flex;
-      justify-content: center;
-      text-decoration: none;
-      align-items: center;
-    i{
+    width: 35px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: inset 0 0 5px blue;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    i {
       font-size: 20px;
       color: blue;
     }
   }
-  a:hover{
+  a:hover {
     background-color: gray;
     transition: 0.3s;
     scale: 0.95;
-    i{
+    i {
       color: rgb(0, 0, 0);
       z-index: 100;
     }
   }
-
 }
 
 .guia {
@@ -251,16 +277,15 @@ video {
   height: 50vw;
   border-radius: 15px;
   margin-top: 10px;
-  img{
+  img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     border-radius: 15px;
   }
- 
 }
 
-.mapa{
+.mapa {
   width: 800px;
   max-width: 95%;
   margin: 10px 0;
@@ -268,11 +293,11 @@ video {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  h1{
+  h1 {
     margin: 5px;
     max-width: 95%;
   }
-  img{
+  img {
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -281,11 +306,11 @@ video {
   }
 }
 .titulo {
-    font-size: 44px;
-    max-width: 95%;
-    text-align: center;
-    font-family: monospace;
-    margin: 5px 0;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+  font-size: 44px;
+  max-width: 95%;
+  text-align: center;
+  font-family: monospace;
+  margin: 5px 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
