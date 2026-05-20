@@ -84,6 +84,10 @@ footer {
   width: 100%;
   margin-top: 10px;
   flex-wrap: wrap;
+  h2{
+    width: 95%;
+    text-align: center;
+  }
 }
 .fx-col {
   flex-direction: column;
@@ -161,7 +165,7 @@ ul {
   font-family: monospace;
 }
 
-figure {
+.video-avatar {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,6 +180,28 @@ figure {
     left: 10px;
     writing-mode: vertical-rl;
   }
+}
+.video-ppt{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  a{
+    text-decoration: none;
+    color: var(--txt-principal);
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  a:hover{
+    color: var(--color-hover);
+    transition: 0.3s;
+  }
+}
+.tiktok{
+  width: 300px;
+
 }
 video {
   width: 95%;
