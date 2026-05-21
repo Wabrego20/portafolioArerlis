@@ -167,18 +167,34 @@ ul {
 
 .video-avatar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin: 10px;
-  height: 400px;
-  width: 300px;
+  height: 444px;
+  width: 250px;
   position: relative;
+  border: none;
+  video{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    border: none;
+  }
   h2 {
     position: absolute;
-    top: 15px;
-    left: 10px;
+    top: 0;
+    right: 0;
+    right: 1px;
     writing-mode: vertical-rl;
+    pointer-events: none;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 0 10px 0 0;
+    font-size: 18px;
+    background-color: var(--fondo);
+    padding: 7px 3px;
+    border: none;
   }
 }
 .video-ppt{
