@@ -81,6 +81,7 @@ footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   width: 100%;
   margin-top: 10px;
   flex-wrap: wrap;
@@ -224,7 +225,7 @@ ul {
   }
 }
 .tiktok{
-  width: 300px;
+  height: 236px;
 }
 
 .carrusel {
@@ -387,4 +388,12 @@ ul {
 
 html {
   scroll-behavior: smooth;
+}
+
+.var1{
+  background-color: #0f9eb1;
+  z-index: 1000;
+  h2{
+    background-color: var(--primario);
+  }
 }
