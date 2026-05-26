@@ -35,11 +35,6 @@ body {
   width: 100%;
   min-height: 100vh;
   flex-direction: column;
-  background-image: url("fondo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 header {
   display: flex;
@@ -60,6 +55,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+  background-color: var(--exito-suave);
 }
 .img-portada {
   object-fit: contain;
@@ -84,8 +80,8 @@ footer {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 10px;
   flex-wrap: wrap;
+  margin: 0;
 }
 .fx-col {
   flex-direction: column;
@@ -97,7 +93,6 @@ footer {
   font-size: 44px;
   width: 100%;
   text-align: center;
-  margin: 5px 0;
   overflow-wrap: break-word;
   word-wrap: break-word;
   text-align: center;
@@ -115,7 +110,7 @@ footer {
   object-fit: contain;
   border-radius: 20px;
   transform: perspective(1000px) rotateY(8deg) rotateX(4deg);
-  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.45);
   transition: 0.4s;
   margin: 0 10px 10px 10px;
 }
@@ -135,27 +130,33 @@ footer {
 
 .seccion {
   font-size: 20px;
-  text-align: justify;
   width: 95%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 10px;
+  margin: 5px auto;
 }
 ul {
   list-style-position: inside;
   list-style: none;
-  padding: 0%;
-  margin: 0% auto;
-  text-align: center;
+  margin: 0 auto;
+  width: 95%;
+  li {
+    width: 100%;
+  }
 }
 .intro {
+  text-align: justify;
 }
 .indice {
+  text-align: left;
   li::before {
     content: "📌";
   }
 }
 .glosario {
+  ul li {
+    text-align: left;
+    padding-left: 20px;
+    text-indent: -40px;
+  }
   li::before {
     content: "🧠";
   }
