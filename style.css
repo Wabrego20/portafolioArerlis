@@ -8,8 +8,8 @@
 :root {
   /* Colores principales */
   --fondo: #f7f4fa;
-  --color-exito-suave: #ead3ea8e;
-  --color-alerta-suave: #f6d6d693;
+  --exito-suave: #4b09474d;
+  --alerta-suave: #f6d6d693;
   --primario: #7e57a0; /* morado suave */
   --secundario: #d8c6e66c; /* lila claro */
   --acento: #a7c7e7; /* azul calmado */
@@ -35,6 +35,11 @@ body {
   width: 100%;
   min-height: 100vh;
   flex-direction: column;
+  background-image: url("fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 header {
   display: flex;
@@ -59,11 +64,12 @@ footer {
 .img-portada {
   object-fit: contain;
   background-position: center;
-  max-width: 95%;
-  max-height: 95%;
-  aspect-ratio: 16/9;
-  z-index: -1;
-  border: 1px solid var(--primario);
+  width: 100%;
+  max-height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: var(--exito-suave);
 }
 .txt-pie {
   width: 95%;
@@ -77,18 +83,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("fondo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   width: 100%;
   margin-top: 10px;
   flex-wrap: wrap;
-  h2 {
-    width: 95%;
-    text-align: center;
-  }
 }
 .fx-col {
   flex-direction: column;
@@ -98,19 +95,19 @@ footer {
 }
 .titulo {
   font-size: 44px;
-  max-width: 95%;
+  width: 100%;
   text-align: center;
   margin: 5px 0;
   overflow-wrap: break-word;
   word-wrap: break-word;
   text-align: center;
+  background-color: var(--exito-suave);
 }
 .f-frase {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  box-shadow: var(--shadow-densa);
 }
 .img-frase {
   width: 450px;
@@ -152,19 +149,13 @@ ul {
   text-align: center;
 }
 .intro {
-  box-shadow: var(--shadow-media);
-  background-color: var(--color-alerta-suave);
 }
 .indice {
-  box-shadow: var(--shadow-suave);
-  background-color: var(--color-exito-suave);
   li::before {
     content: "📌";
   }
 }
 .glosario {
-  box-shadow: var(--shadow-media);
-  background-color: var(--color-alerta-suave);
   li::before {
     content: "🧠";
   }
