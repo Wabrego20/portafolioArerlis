@@ -41,7 +41,6 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
-  box-shadow: inset var(--shadow-media);
 }
 main {
   display: flex;
@@ -56,14 +55,15 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  background-color: var(--color-alerta-suave);
 }
 .img-portada {
-  object-fit: cover;
+  object-fit: contain;
   background-position: center;
-  width: 100%;
-  box-shadow: inset var(--shadow-suave);
+  max-width: 95%;
+  max-height: 95%;
+  aspect-ratio: 16/9;
   z-index: -1;
+  border: 1px solid var(--primario);
 }
 .txt-pie {
   width: 95%;
@@ -211,32 +211,7 @@ ul {
     border: none;
   }
 }
-.video-ppt {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 5px;
-  width: 420px;
-  max-width: 95%;
-  border-radius: 10px;
-  background-color: var(--txt-principal);
-  color: var(--txt-claro);
-  video {
-    width: 100%;
-    border-radius: 10px;
-  }
-  a {
-    text-decoration: none;
-    color: var(--txt-claro);
-    font-size: 16px;
-    font-weight: bold;
-  }
-  a:hover {
-    color: var(--color-hover);
-    transition: 0.3s;
-  }
-}
+
 .tiktok {
   height: 236px;
 }
@@ -364,6 +339,7 @@ ul {
   width: 400px;
   max-width: 95%;
   margin: 10px;
+  transition: 0.5s;
   img {
     width: 100%;
     height: 100%;
@@ -373,8 +349,7 @@ ul {
   }
 }
 .btn-videos:hover {
-  scale: 0.98;
-  transition: 0.5s;
+  transform: scale(0.98);
 }
 
 .volver {
@@ -408,4 +383,80 @@ html {
   h2 {
     background-color: var(--primario);
   }
+}
+
+.anexosContenido {
+  max-width: 95%;
+  width: 300px;
+  aspect-ratio: 16/9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--txt-principal);
+  box-shadow: var(--shadow-densa);
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--txt-claro);
+  text-align: center;
+  padding: 0 5px;
+}
+.anexosContenido:hover {
+  color: var(--color-hover);
+  transform: scale(0.98);
+}
+
+/*VIDEOS_PPTS.HTML*/
+.fx-video-ppts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px;
+  flex-wrap: wrap;
+  background-color: var(--txt-claro);
+}
+
+.tituloVideosPtts {
+  width: 100%;
+  text-align: center;
+  background-color: var(--txt-principal);
+  color: var(--txt-claro);
+}
+
+.video-ppt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  width: 420px;
+  max-width: 95%;
+  border-radius: 10px;
+  background-color: var(--txt-principal);
+  color: var(--txt-claro);
+  video {
+    width: 100%;
+    border-radius: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: var(--txt-claro);
+    font-size: 16px;
+    font-weight: bold;
+  }
+  a:hover {
+    color: var(--color-hover);
+    transition: 0.3s;
+  }
+}
+.pieVideosPtts {
+  width: 100%;
+  text-align: center;
+  background-color: var(--txt-principal);
+  color: var(--txt-claro);
+  padding: 5px;
 }
