@@ -425,20 +425,24 @@ html {
   aspect-ratio: 9/16;
   width: 250px;
   position: relative;
-  border: 1px solid var(--txt-principal);
   border-radius: 10px;
+  border: 1px solid;
+  box-shadow: var(--shadow-densa);
+  
   video {
     width: 100%;
     height: 100%;
     object-fit: contain;
     border-radius: 10px;
     border: none;
+    box-sizing: border-box;
+    background-color: var(--txt-principal);
+  
   }
   h2 {
     position: absolute;
     top: 0;
     right: 0;
-    right: 1px;
     writing-mode: vertical-rl;
     pointer-events: none;
     height: fit-content;
