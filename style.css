@@ -458,10 +458,11 @@ html {
   background: white;
   width: 95%;
   max-width: 900px;
-  padding: 30px;
-  border-radius: 25px;
+  padding: 10px;
+  border-radius: 10px;
   box-shadow: var(--shadow-densa);
   text-align: center;
+  margin: 10px auto;
 
   h1 {
     color: #06295c;
