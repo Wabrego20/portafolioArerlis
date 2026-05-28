@@ -161,14 +161,14 @@ li {
   text-align: justify;
   li::before {
     content: "🧠";
-    padding-left: 5px;
   }
 }
 .recomendaciones{
   text-align: justify;
+  width: 90%;
   li{
-    padding-left: 5px;
-    text-indent: 0;
+    padding-left: 10px;
+    text-indent:0;
   }
 }
 
