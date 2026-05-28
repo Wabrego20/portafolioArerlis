@@ -130,27 +130,20 @@ footer {
 .seccion {
   width: 95%;
   margin: 10px auto;
+  font-size: 16px;
 }
 
-ul {
-  list-style: none;
+ul, ol {
   width: 95%;
-  margin: 0 auto;
-  padding-left: 20px;
-  box-sizing: border-box;
-  background-color: #d8c6e66c;
-}
-ol {
-  width: 95%;
-  margin: 0 auto;
+  margin: 10px auto;
   padding-left: 20px;
   box-sizing: border-box;
 }
 li {
   width: 100%;
   text-indent: -20px;
-  text-align: justify;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 .intro {
@@ -158,15 +151,24 @@ li {
 }
 .indice {
   text-align: left;
+  list-style: none;
   li::before {
     content: "📌";
   }
 }
 .glosario {
+  list-style: none;
   text-align: justify;
   li::before {
     content: "🧠";
     padding-left: 5px;
+  }
+}
+.recomendaciones{
+  text-align: justify;
+  li{
+    padding-left: 5px;
+    text-indent: 0;
   }
 }
 
@@ -176,7 +178,6 @@ li {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  font-family: monospace;
 }
 
 .carrusel {
