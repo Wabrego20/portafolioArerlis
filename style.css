@@ -428,7 +428,7 @@ html {
   border-radius: 10px;
   border: 1px solid;
   box-shadow: var(--shadow-densa);
-  
+
   video {
     width: 100%;
     height: 100%;
@@ -437,7 +437,6 @@ html {
     border: none;
     box-sizing: border-box;
     background-color: var(--txt-principal);
-  
   }
   h2 {
     position: absolute;
@@ -452,5 +451,123 @@ html {
     background-color: var(--fondo);
     padding: 7px 3px;
     border: none;
+  }
+}
+
+/*Reloj*/
+.container {
+  background: white;
+  width: 95%;
+  max-width: 900px;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: var(--shadow-densa);
+  text-align: center;
+
+  h1 {
+    color: #06295c;
+    font-size: 42px;
+    margin-bottom: 5px;
+  }
+
+  .subtitle {
+    color: #1597a5;
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .game {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.selected {
+  background: #ff6f61 !important;
+  color: white;
+}
+
+.number {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffd44d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #06295c;
+  transform: translate(-90%, -90%);
+}
+
+.hand {
+  position: absolute;
+  width: 6px;
+  height: 105px;
+  background: #06295c;
+  left: 50%;
+  top: 50%;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%) rotate(0deg);
+  border-radius: 10px;
+  transition: transform 2s ease-out;
+}
+
+.center {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: #06295c;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  border: 12px solid #06295c;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.panel {
+  max-width: 380px;
+  text-align: center;
+
+  .question-box {
+    background: #f3fbff;
+    border: 3px dashed #1597a5;
+    border-radius: 18px;
+    padding: 25px;
+    min-height: 130px;
+    font-size: 22px;
+    color: #06295c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    margin-top: 25px;
+    background: #ffcc33;
+    color: #06295c;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    background: #ffc107;
   }
 }
