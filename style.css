@@ -528,7 +528,8 @@ html {
 
 .clock {
   width: 300px;
-  height: 300px;
+  aspect-ratio: 1/1;
+  max-width: 100%;
   border: 12px solid #06295c;
   border-radius: 50%;
   position: relative;
