@@ -143,14 +143,13 @@ ol{
 ul {
   list-style: none;
   margin: 0 auto;
-  width: 95%;
-  padding-left: 0;
+  width: 100%;
+  text-indent: -10%;
 }
 
 ul li {
   width: 100%;
-  padding-left: 20px;
-  text-indent: 0;
+  padding-left: 10%;
   text-align: justify;
   box-sizing: border-box;
 }
