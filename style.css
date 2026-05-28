@@ -127,40 +127,53 @@ footer {
   text-align: justify;
   width: 450px;
 }
-
-.seccion {
-  font-size: 20px;
+.seccion{
   width: 95%;
-  margin: 5px auto;
+  margin: 10px auto;
 }
 
 ul {
   list-style: none;
+   width: 95%;
   margin: 0 auto;
-  width: 100%;
-  text-indent: -20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  li {
+    width: 100%;
+    padding-left: 20px;
+    text-indent: -20px;
+    text-align: justify;
+    box-sizing: border-box;
+  }
+}
+ol {
+  width: 95%;
+  margin: 0 auto;
+  padding-left: 20px;
+  box-sizing: border-box;
+  li {
+    width: 100%;
+    padding-left: 20px;
+    text-indent: -20px;
+    text-align: justify;
+    box-sizing: border-box;
+  }
 }
 
-ul li {
-  width: 100%;
-  padding-left: 20px;
-  text-align: justify;
-  box-sizing: border-box;
-}
+
 .intro {
   text-align: justify;
 }
 .indice {
   li::before {
     content: "📌";
-    padding-left: 0;
+    padding-left: -20px;
   }
 }
 .glosario {
- 
   li::before {
     content: "🧠";
-    padding-left: 0;
+    padding-left: -20px;
   }
 }
 
@@ -266,7 +279,7 @@ ul li {
 .autoevalua {
   max-width: 95%;
   object-fit: contain;
-  border-radius: 7px;
+  border-radius: 10px;
   margin: 10px auto;
   box-shadow: var(--shadow-densa);
 }
@@ -335,8 +348,6 @@ ul li {
 html {
   scroll-behavior: smooth;
 }
-
-
 
 .anexosContenido {
   max-width: 95%;
