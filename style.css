@@ -173,6 +173,10 @@ li {
   }
 }
 
+.bibliografia {
+  list-style: none;
+  text-align: justify;
+}
 .ppts {
   width: 100%;
   display: flex;
