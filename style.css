@@ -133,17 +133,26 @@ footer {
   width: 95%;
   margin: 5px auto;
 }
+ol{
+  width: 95%;
+  margin: 0 auto;
+  li{
+    text-align: justify;
+  }
+}
 ul {
-  list-style-position: inside;
   list-style: none;
   margin: 0 auto;
   width: 95%;
-  li {
-    width:100%;
-    padding-left: 20px;
-    text-indent: -40px;
-    text-align: justify;
-  }
+  padding-left: 0;
+}
+
+ul li {
+  width: 100%;
+  padding-left: 20px;
+  text-indent: 0;
+  text-align: justify;
+  box-sizing: border-box;
 }
 .intro {
   text-align: justify;
@@ -268,6 +277,7 @@ ul {
   box-shadow: var(--shadow-densa);
 }
 
+/*Mapa Mental*/
 .mapa {
   width: 800px;
   max-width: 95%;
@@ -306,6 +316,7 @@ ul {
   transform: scale(0.98);
 }
 
+/*Boton de retorno*/
 .volver {
   position: fixed;
   bottom: 10px;
@@ -331,13 +342,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.var1 {
-  background-color: #0f9eb1;
-  z-index: 1000;
-  h2 {
-    background-color: var(--primario);
-  }
-}
+
 
 .anexosContenido {
   max-width: 95%;
