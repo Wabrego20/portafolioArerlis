@@ -138,12 +138,12 @@ ul {
   list-style: none;
   margin: 0 auto;
   width: 100%;
-  text-indent: -30px;
+  text-indent: -20px;
 }
 
 ul li {
   width: 100%;
-  padding-left: 30px;
+  padding-left: 20px;
   text-align: justify;
   box-sizing: border-box;
 }
