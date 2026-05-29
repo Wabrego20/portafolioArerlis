@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refugio Subterráneo</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: monospace;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 5px;
+      background: #ffffff;
+      p{color: #1e8d1a;}
+    }
+
+    header h1 {
+      width: 95%;
+      text-align: center;
+      font-size: 32px;
+      color: #000000;
+      
+    }
+
+    .contador {
+      margin: 5px;
+      font-size: 18px;
+      color: #0578fa;
+    }
+
+    main {
+      width:100%;
+      margin: auto;
+      padding: 5px;
+    }
+
+    .intro,
+    .aviso {
+      background: #1f2937;
+      padding: 5px;
+      border-radius: 10px;
+      margin: 5px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .aviso {
+      border-left: 6px solid #facc15;
+    }
+
+    .personajes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #1f2937;
+      padding: 5px;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    .card.seleccionado {
+      border-color: #22c55e;
+      background: #064e3b;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #facc15;
+    }
+
+    .card p {
+      color: #d1d5db;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .card.seleccionado button {
+      background: #dc2626;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 110px;
+      margin: 5px;
+      padding: 5px;
+      border-radius: 10px;
+      border: 1px solid;
+      resize: vertical;
+      font-size: 15px;
+    }
+
+    .acciones {
+      margin: 5px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .acciones button {
+      flex: 1;
+      min-width: 200px;
+      background: #facc15;
+      color: #111827;
+    }
+
+    .resultado {
+      margin: 5px;
+      padding: 5px;
+      background: #020617;
+      border-radius: 10px;
+      display: none;
+      line-height: 1.6;
+    }
+
+    .perfil {
+      margin: 5px;
+      padding: 5px;
+      background: #1f2937;
+      border-radius: 10px;
+      border-left: 6px solid #22c55e;
+    }
+
+    .barra {
+      margin: 5px;
+    }
+
+    .barra span {
+      display: block;
+      margin: 5px;
+    }
+
+    .progreso {
+      width: 100%;
+      background: #374151;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .relleno {
+      height: 18px;
+      background: #22c55e;
+      width: 0%;
+      text-align: right;
+      padding-right: 5px;
+      font-size: 12px;
+      color: white;
+      line-height: 18px;
+    }
+
+    ol li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Refugio Subterráneo</h1>
+    <p>Dinámica interactiva de toma de decisiones</p>
+    <div class="contador">Seleccionados: <span id="contador">0</span>/6</div>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <p>
+        La ciudad está bajo amenaza de bombardeo. Existe un refugio subterráneo
+        que solamente puede albergar a seis personas. Doce desean entrar.
+        Tu tarea es escoger únicamente seis personas.
+      </p>
+    </section>
+
+    <section class="aviso">
+      <strong>Importante:</strong>
+      esta actividad es solo un juego educativo y reflexivo. No ofrece diagnósticos
+      clínicos, no mide personalidad de forma profesional y no debe usarse para
+      juzgar a nadie. Su propósito es analizar criterios, valores, prejuicios y
+      formas de razonamiento al tomar decisiones difíciles.
+    </section>
+
+    <section class="personajes" id="personajes"></section>
+
+    <textarea id="justificacion" placeholder="Escribe aquí por qué escogiste a esas personas..."></textarea>
+
+    <div class="acciones">
+      <button onclick="verResultado()">Ver mi decisión</button>
+      <button onclick="reiniciar()">Reiniciar juego</button>
+    </div>
+
+    <section class="resultado" id="resultado"></section>
+
+  </main>
+
+  <script>
+    const personajes = [
+      "Violinista, 40 años, drogadicto",
+      "Abogado, 25 años",
+      "Mujer del abogado, 24 años, acaba de salir del INSAM",
+      "Sacerdote, 75 años",
+      "Prostituta, 34 años",
+      "Ateo con rasgos esquizofrénicos, 20 años, autor de varios asesinatos",
+      "Universitaria que hizo voto de castidad",
+      "Físico, 28 años, solo entra si lleva su arma",
+      "Predicador fanático, 21 años",
+      "Niña, 12 años, bajo coeficiente intelectual",
+      "Homosexual, 47 años",
+      "Mujer de 32 años con discapacidad intelectual y epilepsia"
+    ];
+
+    const significado = {
+      "Violinista, 40 años, drogadicto": {
+        humanitario: 2,
+        idealista: 1
+      },
+      "Abogado, 25 años": {
+        utilitarista: 2,
+        pragmatico: 1
+      },
+      "Mujer del abogado, 24 años, acaba de salir del INSAM": {
+        relacional: 2,
+        humanitario: 1
+      },
+      "Sacerdote, 75 años": {
+        idealista: 3
+      },
+      "Prostituta, 34 años": {
+        humanitario: 2,
+        igualitario: 1
+      },
+      "Ateo con rasgos esquizofrénicos, 20 años, autor de varios asesinatos": {
+        humanitario: 1,
+        pragmatico: 1
+      },
+      "Universitaria que hizo voto de castidad": {
+        idealista: 2
+      },
+      "Físico, 28 años, solo entra si lleva su arma": {
+        utilitarista: 3,
+        pragmatico: 2
+      },
+      "Predicador fanático, 21 años": {
+        idealista: 2
+      },
+      "Niña, 12 años, bajo coeficiente intelectual": {
+        humanitario: 4
+      },
+      "Homosexual, 47 años": {
+        humanitario: 2,
+        igualitario: 2
+      },
+      "Mujer de 32 años con discapacidad intelectual y epilepsia": {
+        humanitario: 4
+      }
+    };
+
+    let seleccionados = [];
+
+    const contenedor = document.getElementById("personajes");
+    const contador = document.getElementById("contador");
+
+    personajes.forEach((persona, index) => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <h3>Opción ${index + 1}</h3>
+        <p>${persona}</p>
+        <button>Seleccionar</button>
+      `;
+
+      const boton = card.querySelector("button");
+
+      boton.addEventListener("click", () => {
+        if (seleccionados.includes(persona)) {
+          seleccionados = seleccionados.filter(p => p !== persona);
+          card.classList.remove("seleccionado");
+          boton.textContent = "Seleccionar";
+        } else {
+          if (seleccionados.length >= 6) {
+            alert("Solo puedes seleccionar 6 personas.");
+            return;
+          }
+
+          seleccionados.push(persona);
+          card.classList.add("seleccionado");
+          boton.textContent = "Quitar";
+        }
+
+        contador.textContent = seleccionados.length;
+      });
+
+      contenedor.appendChild(card);
+    });
+
+    function calcularPerfil() {
+      const perfiles = {
+        humanitario: 0,
+        utilitarista: 0,
+        relacional: 0,
+        idealista: 0,
+        pragmatico: 0,
+        igualitario: 0
+      };
+
+      seleccionados.forEach(persona => {
+        const datos = significado[persona];
+
+        for (let perfil in datos) {
+          perfiles[perfil] += datos[perfil];
+        }
+      });
+
+      return perfiles;
+    }
+
+    function obtenerPerfilDominante(perfiles) {
+      return Object.keys(perfiles).reduce((a, b) =>
+        perfiles[a] > perfiles[b] ? a : b
+      );
+    }
+
+    function obtenerAnalisis(perfil) {
+      const analisis = {
+        humanitario: `
+          <h3>Perfil Humanitario</h3>
+          <p>
+            Tus decisiones parecen orientarse hacia la protección de personas
+            vulnerables. Este estilo suele valorar la dignidad humana, la
+            compasión, la inclusión y la posibilidad de ofrecer ayuda.
+          </p>
+        `,
+        utilitarista: `
+          <h3>Perfil Utilitarista</h3>
+          <p>
+            Tus decisiones parecen orientarse hacia el beneficio colectivo.
+            Este estilo prioriza quién podría aportar más a la supervivencia,
+            la organización o la reconstrucción del grupo.
+          </p>
+        `,
+        relacional: `
+          <h3>Perfil Relacional</h3>
+          <p>
+            Tus decisiones parecen dar importancia a los vínculos afectivos.
+            Este estilo considera el valor de la familia, la pareja, la lealtad
+            y el acompañamiento emocional.
+          </p>
+        `,
+        idealista: `
+          <h3>Perfil Idealista</h3>
+          <p>
+            Tus decisiones parecen estar guiadas por valores, creencias,
+            principios morales o espirituales. Este estilo suele fijarse en
+            la conducta, la fe, la disciplina o la coherencia ética.
+          </p>
+        `,
+        pragmatico: `
+          <h3>Perfil Pragmático</h3>
+          <p>
+            Tus decisiones parecen basarse en la funcionalidad, la seguridad
+            y la adaptación a la crisis. Este estilo evalúa riesgos,
+            capacidades y consecuencias prácticas.
+          </p>
+        `,
+        igualitario: `
+          <h3>Perfil Igualitario</h3>
+          <p>
+            Tus decisiones parecen orientarse hacia la igualdad y la inclusión.
+            Este estilo evita excluir personas por etiquetas sociales,
+            orientación, condición o estigma.
+          </p>
+        `
+      };
+
+      return analisis[perfil];
+    }
+
+    function crearBarras(perfiles) {
+      const maximo = Math.max(...Object.values(perfiles));
+
+      let html = "<h3>Puntuación por estilo de razonamiento</h3>";
+
+      for (let perfil in perfiles) {
+        let porcentaje = maximo === 0 ? 0 : Math.round((perfiles[perfil] / maximo) * 100);
+
+        html += `
+          <div class="barra">
+            <span>${perfil.toUpperCase()} - ${perfiles[perfil]} puntos</span>
+            <div class="progreso">
+              <div class="relleno" style="width:${porcentaje}%">${porcentaje}%</div>
+            </div>
+          </div>
+        `;
+      }
+
+      return html;
+    }
+
+    function verResultado() {
+      const resultado = document.getElementById("resultado");
+      const justificacion = document.getElementById("justificacion").value;
+
+      if (seleccionados.length < 6) {
+        alert("Debes seleccionar exactamente 6 personas.");
+        return;
+      }
+
+      const perfiles = calcularPerfil();
+      const perfilDominante = obtenerPerfilDominante(perfiles);
+
+      resultado.style.display = "block";
+
+      resultado.innerHTML = `
+        <h2>Tu selección final</h2>
+
+        <ol>
+          ${seleccionados.map(p => `<li>${p}</li>`).join("")}
+        </ol>
+
+        <h3>Tu justificación</h3>
+        <p>${justificacion || "No escribiste justificación."}</p>
+
+        <div class="perfil">
+          ${obtenerAnalisis(perfilDominante)}
+        </div>
+
+        <div class="perfil">
+          ${crearBarras(perfiles)}
+        </div>
+
+        <div class="perfil">
+          <h3>Aviso importante</h3>
+          <p>
+            Este resultado no es un diagnóstico psicológico ni una evaluación
+            clínica. Es una lectura educativa basada en las elecciones realizadas
+            dentro del juego. Sirve para reflexionar sobre valores, prejuicios,
+            prioridades y estilos de razonamiento.
+          </p>
+        </div>
+      `;
+
+      resultado.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function reiniciar() {
+      seleccionados = [];
+      contador.textContent = 0;
+
+      document.getElementById("resultado").style.display = "none";
+      document.getElementById("justificacion").value = "";
+
+      document.querySelectorAll(".card").forEach(card => {
+        card.classList.remove("seleccionado");
+        card.querySelector("button").textContent = "Seleccionar";
+      });
+    }
+  </script>
+
+</body>
+</html>

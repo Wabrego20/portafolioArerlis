@@ -576,3 +576,16 @@ html {
     background: #ffc107;
   }
 }
+
+/*Refugio*/
+#refugio .iframe-refugio {
+  max-width: 95%;
+  width: 900px;
+  min-height: 900px;
+  border: none;
+  border-radius: 15px;
+  display: block;
+  margin: 10px auto;
+  box-shadow: var(--shadow-densa);
+  
+}
