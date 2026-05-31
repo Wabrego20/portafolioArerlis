@@ -164,7 +164,7 @@ li {
     content: "🧠";
   }
 }
-.recomendaciones {
+.recomendaciones, .conclusiones {
   text-align: justify;
   width: 90%;
   li {
@@ -580,11 +580,14 @@ html {
 /*Refugio*/
 #refugio .iframe-refugio {
   max-width: 95%;
-  width: 900px;
+  width: 950px;
   min-height: 900px;
   border: none;
   border-radius: 15px;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 10px auto;
   box-shadow: var(--shadow-densa);
   

@@ -51,10 +51,10 @@
     .intro,
     .aviso {
       background: #1f2937;
-      padding: 5px;
+      padding: 7px;
       border-radius: 10px;
       margin: 5px auto;
-      width: 99%;
+      width: 95%;
       line-height: 1.6;
       text-align: justify;
     }
@@ -64,9 +64,12 @@
     }
 
     .personajes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 95%;   
     }
 
     .card {
@@ -75,6 +78,10 @@
       border-radius: 10px;
       border: 2px solid transparent;
       transition: 0.3s;
+      max-width: 95%;
+      width: 270px;
+      aspect-ratio: 16/9;
+      margin: 5px auto;
     }
 
     .card.seleccionado {
@@ -83,12 +90,13 @@
     }
 
     .card h3 {
-      margin-top: 0;
+      margin: 5px auto;
       color: #facc15;
     }
 
     .card p {
       color: #d1d5db;
+      margin: 5px auto;
     }
 
     button {
@@ -100,6 +108,7 @@
       background: #2563eb;
       color: white;
       font-weight: bold;
+      margin: 5px auto;
     }
 
     button:hover {
