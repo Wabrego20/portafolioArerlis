@@ -164,7 +164,8 @@ li {
     content: "🧠";
   }
 }
-.recomendaciones, .conclusiones {
+.recomendaciones,
+.conclusiones {
   text-align: justify;
   width: 90%;
   li {
@@ -362,31 +363,29 @@ html {
   margin: 10px;
   color: var(--txt-principal);
   text-align: center;
-  h3{
+  h3 {
     width: 95%;
     margin: 5px auto;
   }
-  img{
+  img {
     width: 95%;
     aspect-ratio: 16/9;
     object-fit: contain;
     border-radius: 10px;
     margin: 5px 0;
   }
-  a{
+  a {
     text-decoration: none;
     margin: 5px;
     transition: transform 0.3s ease;
     color: var(--txt-principal);
   }
   .a:hover {
-  color: var(--color-hover);
-  transform: scale(0.98);
-  text-decoration: underline;
+    color: var(--color-hover);
+    transform: scale(0.98);
+    text-decoration: underline;
+  }
 }
-  
-}
-
 
 /*VIDEOS_PPTS.HTML*/
 .fx-video-ppts {
@@ -605,5 +604,29 @@ html {
   flex-direction: column;
   margin: 10px auto;
   box-shadow: var(--shadow-densa);
-  
+}
+
+.matriz {
+  width: 900px;
+  max-width: 95%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: var(--shadow-densa);
+  h1 {
+    width: 95%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 0;
+  }
+}
+.carrusel2{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  box-shadow: none;
+  margin: 5px auto;
 }
