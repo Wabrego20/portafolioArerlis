@@ -352,26 +352,41 @@ html {
 .anexosContenido {
   max-width: 95%;
   width: 300px;
-  aspect-ratio: 16/9;
+  height: 250px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: var(--txt-principal);
+  justify-content: space-around;
+  flex-direction: column;
   box-shadow: var(--shadow-densa);
   border-radius: 10px;
   margin: 10px;
-  cursor: pointer;
-  transition: 0.5s;
-  text-decoration: none;
-  font-size: 20px;
-  color: var(--txt-claro);
+  color: var(--txt-principal);
   text-align: center;
-  padding: 0 5px;
-}
-.anexosContenido:hover {
+  h3{
+    width: 95%;
+    margin: 5px auto;
+  }
+  img{
+    width: 95%;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 5px 0;
+  }
+  a{
+    text-decoration: none;
+    margin: 5px;
+    transition: transform 0.3s ease;
+    color: var(--txt-principal);
+  }
+  .a:hover {
   color: var(--color-hover);
   transform: scale(0.98);
+  text-decoration: underline;
 }
+  
+}
+
 
 /*VIDEOS_PPTS.HTML*/
 .fx-video-ppts {
