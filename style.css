@@ -562,8 +562,8 @@ html {
   .question-box {
     background: #f3fbff;
     border: 3px dashed #1597a5;
-    border-radius: 18px;
-    padding: 25px;
+    border-radius: 10px;
+    padding: 10px;
     min-height: 130px;
     font-size: 22px;
     color: #06295c;
@@ -577,10 +577,10 @@ html {
     background: #ffcc33;
     color: #06295c;
     border: none;
-    padding: 15px 30px;
+    padding: 5px 10px;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 30px;
+    border-radius: 10px;
     cursor: pointer;
     transition: 0.3s;
   }
