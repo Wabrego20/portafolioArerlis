@@ -337,8 +337,7 @@ li {
   border-radius: 50%;
   box-shadow: var(--shadow-inset);
   color: var(--color-hover);
-  z-index: 1000;
-  background-color: var(--txt-claro);
+  background-color: #ffffff
 }
 .volver:hover {
   background-color: var(--color-hover);
