@@ -337,7 +337,7 @@ li {
   border-radius: 50%;
   box-shadow: var(--shadow-inset);
   color: var(--color-hover);
-  background-color: #ffffff
+  background-color: transparent;
 }
 .volver:hover {
   background-color: var(--color-hover);
@@ -576,7 +576,7 @@ html {
     background: #ffcc33;
     color: #06295c;
     border: none;
-    padding: 5px 10px;
+    padding: 15px 10px;
     font-size: 20px;
     font-weight: bold;
     border-radius: 10px;
