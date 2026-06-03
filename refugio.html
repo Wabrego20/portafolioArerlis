@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,14 +16,16 @@
     body {
       font-family: monospace;
       color: white;
-      max-width: 900px;
     }
 
     header {
       text-align: center;
       padding: 5px;
       background: #ffffff;
-      p{color: #1e8d1a;}
+
+      p {
+        color: #1e8d1a;
+      }
     }
 
     header h1 {
@@ -30,7 +33,7 @@
       text-align: center;
       font-size: 32px;
       color: #000000;
-      
+
     }
 
     .contador {
@@ -64,27 +67,20 @@
     }
 
     .personajes {
-      display: flex;
-      justify-content: center;
-      justify-items: center;
-      flex-wrap: wrap;
-      align-items: center;
-      width: 95%;   
+      width: 95%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
     }
 
     .card {
+      min-height: 120px;
       background: #1f2937;
-      padding: 5px;
-      border-radius: 10px;
-      border: 2px solid transparent;
-      transition: 0.3s;
-      max-width: 95%;
-      width: 270px;
-      aspect-ratio: 16/9;
-      margin: 5px auto;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
     }
 
     .card.seleccionado {
@@ -100,10 +96,12 @@
     .card p {
       color: #d1d5db;
       margin: 5px auto;
+      width: 95%;
+      text-align: justify;
     }
 
     button {
-      width: 100%;
+      width: 95%;
       padding: 10px;
       border: none;
       border-radius: 10px;
@@ -193,6 +191,24 @@
 
     ol li {
       margin-bottom: 8px;
+    }
+
+    @media (max-width: 1024px) {
+      .personajes {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .personajes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .personajes {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -501,4 +517,5 @@
   </script>
 
 </body>
+
 </html>
