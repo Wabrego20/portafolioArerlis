@@ -307,11 +307,14 @@ li {
   }
 }
 .btn-investigacion{
+  display: flex;
+  align-items: center;   /* centra verticalmente */
+  justify-content: center; /* opcional: centra horizontalmente */
   width: 220px;
-  height: 70px;
+  height: 100px;
   max-width: 95%;
   margin: 10px;
-  padding: 10px;
+  padding: 7px;
   border-radius: 10px;
   box-shadow: var(--shadow-densa);
   background-color: var(--primario);
@@ -319,7 +322,10 @@ li {
   text-decoration: none;
   font-size: 12px;
   text-align: justify;
-  line-height: 1.5;
+  transition: 0.5s;
+}
+.btn-investigacion:hover {
+  transform: scale(0.98);
 }
 
 .btn-videos {
