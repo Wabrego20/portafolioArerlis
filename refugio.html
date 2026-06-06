@@ -62,8 +62,7 @@
       text-align: justify;
     }
 
-    .aviso,
-    .aviso2 {
+    .aviso {
       border-left: 6px solid #facc15;
     }
 
@@ -111,6 +110,7 @@
       color: white;
       font-weight: bold;
       margin: 5px auto;
+      text-align: center;
     }
 
     button:hover {
@@ -135,17 +135,21 @@
     .acciones {
       margin: 5px;
       display: flex;
+      justify-content: center;
+      align-items: center;
       gap: 15px;
       flex-wrap: wrap;
     }
 
-    .acciones button {
+    .btn {
       flex: 1;
       min-width: 200px;
       background: #facc15;
       color: #111827;
-      display: flex;
-      align-items: center;
+    }
+
+    .btn:hover {
+      background: #eab308;
     }
 
     .resultado {
@@ -158,6 +162,14 @@
       width: 95%;
     }
 
+    .titulor {
+      text-align: center;
+      background: #1f2937;
+      color: #d1d5db;
+      padding: 5px;
+      border-radius: 10px;
+    }
+
     .perfil,
     .justificacion {
       margin: 5px;
@@ -165,6 +177,15 @@
       background: #1f2937;
       border-radius: 10px;
       border-left: 6px solid #22c55e;
+      color: #d1d5db;
+    }
+
+    .aviso2 {
+      margin: 5px;
+      padding: 5px;
+      background: #1f2937;
+      border-radius: 10px;
+      border-left: 6px solid #facc15;
       color: #d1d5db;
     }
 
@@ -197,6 +218,7 @@
 
     ol {
       margin: 5px 0;
+      border-left: 6px solid #22c55e;
       padding-left: 30px;
       /* espacio para la numeración */
       background: #1f2937;
@@ -265,8 +287,8 @@
     <textarea id="justificacion" placeholder="Escribe aquí por qué escogiste a esas personas..."></textarea>
 
     <div class="acciones">
-      <button onclick="verResultado()">Ver mi decisión</button>
-      <button onclick="reiniciar()">Reiniciar juego</button>
+      <button class="btn" onclick="verResultado()">Ver mi decisión</button>
+      <button class="btn" onclick="reiniciar()">Reiniciar juego</button>
     </div>
 
     <section class="resultado" id="resultado"></section>
@@ -492,7 +514,7 @@
       resultado.style.display = "block";
 
       resultado.innerHTML = `
-        <h2>Tu selección final</h2>
+        <h2 class="titulor">Tu selección final</h2>
 
         <ol>
           ${seleccionados.map(p => `<li>${p}</li>`).join("")}
@@ -511,7 +533,7 @@
           ${crearBarras(perfiles)}
         </div>
 
-        <div class="perfil aviso2">
+        <div class="aviso2">
           <h3>Aviso importante</h3>
           <p>
             Este resultado no es un diagnóstico psicológico ni una evaluación
