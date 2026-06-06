@@ -311,14 +311,13 @@ li {
   align-items: center;   /* centra verticalmente */
   justify-content: center; /* opcional: centra horizontalmente */
   width: 220px;
-  height: 100px;
+  height: 75px;
   max-width: 95%;
   margin: 10px;
   padding: 7px;
   border-radius: 10px;
   box-shadow: var(--shadow-densa);
-  background-color: var(--primario);
-  color: var(--txt-claro);
+  color: var(--txt-principal);
   text-decoration: none;
   font-size: 12px;
   text-align: justify;
@@ -650,3 +649,13 @@ html {
   box-shadow: none;
   margin: 5px auto;
 }
+
+ @media (max-width: 480px) {
+      .btn-investigacion{
+        width: 95%;
+        height: auto;
+        padding: 10px;
+        margin: 5px auto;
+        box-shadow: var(--shadow-inset);
+      }
+    }
